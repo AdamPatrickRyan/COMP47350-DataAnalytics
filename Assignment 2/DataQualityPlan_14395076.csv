@@ -1,0 +1,13 @@
+,Data Quality Issues,Data Quality Actions
+cdc_case_earliest_dt,515 Rows where not minimum of other dates populated,Confirm reason. Otherwise leave as-is
+cdc_report_dt,Depreciated,Drop
+pos_spec_dt,72% of data missing,Drop after using for status correction
+onset_dt,49% of Data Missing. <1% of dates where onset_dt is too far after case date.,Split into days since symptom. Flag missing data. Drop column. Statistically relevant. Enquire on why some values are so extreme after earliest date
+current_status,Probable Cases that should be Laboratory Confirmed Cases,Update instances
+sex,Missing and Unknown flags,Bin into Unknown category
+age_group,Missing and Unknown flags,Bin into groups
+race_ethnicity_combined,Concatenated field. Race sufficient to capture all info.,Split field and drop ethnicity
+hosp_yn,"Missing, Unknown, and OTH values",Bin unknown into groups
+icu_yn,Missing data 72%.,Determine if missing because 'no'. Column is relevant so await answer before dropping
+death_yn,Not applicable,No action
+medcond_yn,80% missing,Grouping missing consistently. Column is relevant so keep until answer on cause of missing values
